@@ -3,7 +3,9 @@
     Index
 {% endblock %}
 {% block menu %}
-
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'add_product' %}">Add Product</a>
+    </li>
 {% endblock %}
 {% block content %}
     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -15,6 +17,7 @@
                         <h5 class="card-title">{{ product.product_name }}</h5>
                         <p class="card-text">{{ product.category }}</p>
                         <p class="card-text">{{ product.cost }}</p>
+                        <a href="{% url 'details' product.pk %}" class="btn btn-dark">See more</a>
                     </div>
                 </div>
             </div>
