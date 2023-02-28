@@ -9,11 +9,11 @@ class DecimalInput(forms.TextInput):
 
 class ProductForm(forms.ModelForm):
     CHOICES = [
-        ('laptops', 'Laptops'),
-        ('headphones', 'Headphones'),
-        ('mouses', 'Mouses'),
-        ('keyboards', 'Keyboards'),
-        ('other', 'Other')
+        ('Laptops', 'Laptops'),
+        ('Headphones', 'Headphones'),
+        ('Mouses', 'Mouses'),
+        ('Keyboards', 'Keyboards'),
+        ('Other', 'Other')
     ]
     category = forms.ChoiceField(choices=CHOICES, initial='other', label="Category")
 
