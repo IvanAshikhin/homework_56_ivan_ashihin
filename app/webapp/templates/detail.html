@@ -8,12 +8,13 @@
     </li>
 {% endblock %}
 {% block content %}
-    <img src="{{ product.image }}" alt="" style="height: 400px; width: 500px;padding-top: 30px" class="img-fluid">
+    <img src="{{ product.image }}" alt="" style="height: 400px; width: 400px;padding-top: 30px" class="img-fluid">
     <h1 class="name">{{ product.product_name }}</h1>
     <p class="category">Category: {{ product.category }}</p>
     <p class="cost">Cost: {{ product.cost }}</p>
     <p class="desc">Description: {{ product.description }}</p>
     <p class="desc">Remain: {{ product.remain }}</p>
+    <a href="{% url 'delete_product' product.pk %}">Delete</a>
 {% endblock %}
 
 

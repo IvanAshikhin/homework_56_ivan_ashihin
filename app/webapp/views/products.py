@@ -36,3 +36,14 @@ def update_view(request, pk):
             return redirect('index_page')
         else:
             return render(request, 'update.html', {'form': form, 'product': product})
+
+
+def delete_view(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    return render(request, 'confirm_delete.html', context={"product": product})
+
+
+def confirm_delete(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    product.delete()
+    return redirect('index_page')
