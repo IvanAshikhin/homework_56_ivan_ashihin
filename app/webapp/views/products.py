@@ -22,3 +22,17 @@ def add_view(request: WSGIRequest):
     else:
         Product.objects.create(**form.cleaned_data)
         return redirect('index_page')
+
+
+def update_view(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'GET':
+        form = ProductForm(instance=product)
+        return render(request, 'update.html', {'form': form, 'product': product})
+    elif request.method == 'POST':
+        form = ProductForm(request.POST, instance=product)
+        if form.is_valid():
+            product.save()
+            return redirect('index_page')
+        else:
+            return render(request, 'update.html', {'form': form, 'product': product})

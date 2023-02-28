@@ -2,6 +2,11 @@
 {% block title %}
  Detail
 {% endblock %}
+{% block menu %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'product_update' product.pk  %}">Update Product</a>
+    </li>
+{% endblock %}
 {% block content %}
     <img src="{{ product.image }}" alt="" style="height: 400px; width: 500px;padding-top: 30px" class="img-fluid">
     <h1 class="name">{{ product.product_name }}</h1>
