@@ -15,7 +15,7 @@ class ProductForm(forms.ModelForm):
         ('Keyboards', 'Keyboards'),
         ('Other', 'Other')
     ]
-    category = forms.ChoiceField(choices=CHOICES, initial='other', label="Category")
+    category = forms.ChoiceField(choices=CHOICES, initial='Other', label="Category")
 
     class Meta:
         model = Product
