@@ -4,6 +4,32 @@ label {
     font-weight: bold;
 }
 
+select {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select option {
+    font-size: 14px;
+}
+
+select option:checked {
+    background-color: #f2f2f2;
+}
+
+
+.delete_prod {
+    background-color: #212529;
+    color: #fff;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 input[type="text"], textarea, input[type="number"] {
     display: block;
     width: 100%;

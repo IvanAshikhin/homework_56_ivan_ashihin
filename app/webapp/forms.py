@@ -8,16 +8,24 @@ class DecimalInput(forms.TextInput):
 
 
 class ProductForm(forms.ModelForm):
+    CHOICES = [
+        ('laptops', 'Laptops'),
+        ('headphones', 'Headphones'),
+        ('mouses', 'Mouses'),
+        ('keyboards', 'Keyboards'),
+        ('other', 'Other')
+    ]
+    category = forms.ChoiceField(choices=CHOICES, initial='other', label="Category")
+
     class Meta:
         model = Product
         fields = ['product_name', 'description', 'image', 'category', 'remain', 'cost']
         labels = {
-            'product_name': 'Наименование',
-            'description': 'Описание',
-            'image': 'Изображение',
-            'category': 'Категория',
-            'remain': 'Остаток',
-            'cost': 'Стоимость'
+            'product_name': 'Product',
+            'description': 'Description',
+            'image': 'Image',
+            'remain': 'Remain',
+            'cost': 'Cost'
         }
         widgets = {
             'remain': forms.NumberInput(attrs={'class': 'form-control', 'min': 0}),
